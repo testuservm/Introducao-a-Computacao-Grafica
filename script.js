@@ -1,10 +1,11 @@
-var svg = document.getElementById("main-svg");
+var div = document.getElementById("svgs");
 
 // Classes
 class Cenario {
-    constructor(image, pos) {
+    constructor(image, pos, dim) {
         this.pos = pos;
         this.image = image;
+        this.dim = dim;
     };
     draw() {
         var newElement = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -345,13 +346,96 @@ var isAbove = function (goals, boxes) {
         if (goals[i].isAbove(boxes)) counter++;
     }
     if (counter == goals.length) {
-        run = false;
+        window.run = false;
         alert("Parabéns, você venceu!");
     }
 }
 
+var createSvg = function (dim) {
+    $("#svgs").append('<svg id="main-svg" width="' + dim[0] + '" height="' + dim[1] + '" viewBox="0 0 ' + dim[0] + ' ' + dim[1] + ' "fill="none" ' + 'xmlns="http://www.w3.org/2000/svg"></svg>');
+    window.svg = document.getElementById("main-svg");
+}
 
+var changeLevel = function () {
+    window.div.innerHTML = "";
+}
+
+var level1 = function () {
+    null;
+    
+}
+
+var level2 = function () {null;}
+
+var run = false;
+var level3 = function () {
+    window.run = true;
+    window.passed = false;
+
+    var limits = [[161, 161, 211, 260], [11, 260, 211, 310], [61, 62, 110, 109], [60, 161, 109, 209], [162, 12, 210, 109], [10, 0, 310, 8], [0, 0, 11, 319], [11, 310, 311, 319], [310, 0, 320, 319]]
+
+    var cen = new Cenario("images/cenario.svg", [0, 0], [320, 320]);
+
+    var goal1 = new Goal("goal1", [261, 61]);
+    var goal2 = new Goal("goal2", [261, 111]);
+    var goal3 = new Goal("goal3", [261, 161]);
+
+    var box1 = new Box("box1", [263, 63], [45, 45], limits)
+    var box2 = new Box("box2", [263, 113], [45, 45], limits);
+    var box3 = new Box("box3", [263, 213], [45, 45], limits);
+
+    var player = new Player([221, 272], 0, [30, 30], limits);
+
+    createSvg(cen.dim);
+
+    cen.draw();
+
+    goal1.draw();
+    goal2.draw();
+    goal3.draw();
+
+    box1.draw();
+    box2.draw();
+    box3.draw();
+
+    player.draw();
+
+
+    
+    var loop = function () {
+        player.draw();
+        player.movement();
+        player.watchCollision();
+    
+        box1.movement(player, [box3, box2], 2);
+        box2.movement(player, [box1, box3], 2);
+        box3.movement(player, [box1, box2], 2);
+    
+        box1.watchCollision(player, 2);
+        box2.watchCollision(player, 2);
+        box3.watchCollision(player, 2);
+    
+        isAbove([goal1, goal2, goal3], [box1, box2, box3]);
+    
+        if (window.run) {
+            requestAnimationFrame(loop);
+        } else {
+            changeLevel();
+        }
+    };
+    loop();
+}
+
+var flow = function () {
+    level1();
+    level2();
+    level3();
+}
+
+flow();
 // -- Game elements --
+
+/*
 var run = true;
 
 var limits = [[161, 161, 211, 260], [11, 260, 211, 310], [61, 62, 110, 109], [60, 161, 109, 209], [162, 12, 210, 109], [10, 0, 310, 8], [0, 0, 11, 319], [11, 310, 311, 319], [310, 0, 320, 319]]
@@ -398,3 +482,4 @@ var loop = function () {
 // -- --
 
 loop();
+*/
