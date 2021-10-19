@@ -12,7 +12,6 @@
 <rect x="60" y="61" width="50" height="49" fill="#949191"/>
 <rect x="160" y="11" width="50" height="99" fill="#949191"/>
 <path d="M161 161H210V310H161V161Z" fill="#949191"/>
-<path d="M161 161H210V310H161V161Z" fill="#949191"/>
 <path d="M11 261H161V310H11V261Z" fill="#949191"/>
 <rect x="60" y="161" width="50" height="49" fill="#949191"/>
 <line x1="310" y1="60.5" x2="10" y2="60.5" stroke="black"/>
