@@ -5,25 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links</title>
+
+    <style>
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            color: rgb(0, 0, 172);
+        }
+        ul.ul1 {
+            padding-left: 0;
+            margin-left: 20px;
+        }
+        ul.ul2, ul.ul3 {
+            padding-left: 0;
+        }
+        li.li1 {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+        li.li2 {
+            list-style: none;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        li.li3 {
+            list-style: none;
+            margin-left: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <ul>
-        <li>
-        <ul>Atividades
-            <li><a href="atividade1/svgdesenho.html">Atividade 1 - Criação de uma imagem SVG</a></li>
+    <main>
+    <ul class="ul1">
+        <li class="li1">
+        <ul class="ul2">
+            <strong>Atividades</strong>
+            <li class="li2"><a href="atividade1/svgdesenho.html" target="_blank">Atividade 1 - Criação de uma imagem SVG</a></li>
         </ul>
         </li>
 
-        <li>
-        <ul>Trabalhos
-            <li>
-            <ul>Trabalho 1 - Transformações em SVG
-                <li><a href="trabalho1/index.html">Jogo</a></li>
-                <li><a href="trabalho1/about.html">Sobre</a></li>
+        <li class="li1">
+        <ul class="ul2">
+            <strong>Trabalhos</strong>
+            <li class="li2">
+            <ul class="ul3">Trabalho 1 - Transformações em SVG
+                <li class="li3"><a href="trabalho1/index.html" target="_blank">Jogo</a></li>
+                <li class="li3"><a href="trabalho1/about.html" target="_blank">Sobre</a></li>
             </ul>
             </li>
         </ul>
         </li>
     </ul>
+    </main>
 </body>
 </html>
