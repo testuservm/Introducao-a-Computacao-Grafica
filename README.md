@@ -1,2 +1,2 @@
 # Introducao-a-Computacao-Grafica
-Atividades e trabalhos realizadoss na disciplina de Introdução à Computação Gráfica
+Atividades e trabalhos realizados na disciplina de Introdução à Computação Gráfica
