@@ -40,6 +40,7 @@ class Player {
         newElement.setAttribute("id", this.id);
         svg.appendChild(newElement);
         this.drawed = true;
+        return;
     };
     remove() {
         if (!this.drawed) return;
@@ -93,7 +94,7 @@ class Goal {
         newElement.innerHTML = '<image href="' + this.image + '">"';
         newElement.setAttribute("transform", "translate(" + this.x + " " + this.y + ")");
         svg.appendChild(newElement);
-
+        return;
     };
 }
 // -------------------------- // -------------------------- //
@@ -164,7 +165,7 @@ Player.prototype.watchCollision = function () {
             if (this.y > this.limits[i][1] && this.y < this.limits[i][3] &&
             (this.x > this.limits[i][0] && this.x < this.limits[i][2] || 
             this.x + this.size[0] > this.limits[i][0] && this.x + this.size[0] < this.limits[i][2])) {
-                this.y += this.speed ;
+                this.y += this.speed;
             }
         }
     } else if (keys["down"]) {
@@ -223,7 +224,7 @@ Box.prototype.watchCollision = function (varPlayer, vel) {
 
 
 
-// -------------------------- Moviments -------------------------- //    
+// -------------------------- Movements -------------------------- //    
 Box.prototype.movement = function (varPlayer, boxes=[], vel=1) {
     if (keys["right"]) {
         if (varPlayer.x > this.x && varPlayer.x < this.x + 10 && (varPlayer.y > this.y && varPlayer.y < this.y + this.size[1] ||
@@ -370,7 +371,7 @@ let changeLevel = function () {
 }
 
 let finishMessage = function () {
-    alert("Parabéns, você ganhou!")
+    alert("Parabéns, você ganhou!");
 }
 
 let returnButtom = function () {
