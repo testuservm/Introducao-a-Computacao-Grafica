@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+
+    <style>
+        body {
+            background: url("images/box.svg");
+            padding: 0;
+        }
+        h2 {
+            font-size: 23pt;
+        }
+        p {
+            font-size: 14pt;
+        }
+        #main-container {
+            min-width: 100px;
+            border-width: 10px;
+            background-color: #949191;
+            border-style: solid;
+            border-color: #303030;
+            border-radius: 5px;
+            margin: 42px 60px;
+            padding: 20px 40px;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                margin: 0px !important;
+            }
+            h2 {
+                font-size: 18pt;
+            }
+            p {
+                font-size: 12pt;
+            }
+            #main-container {
+                margin: 0px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <main>
+        <h2>Sobre o projeto</h2>
+        <p>O jogo disponível nesse repositório foi inspirado no antigo puzzle Sokoban. A motivação para sua criação foi a necessidade de produzir um trabalho que usasse transformações de imagens SVG, para servir como parâmetro de avaliação da disciplina Introdução à Computação Gráfica, além do meu interesse pessoal em aplicar Javascript em algum projeto real, a fim de fixar e aprimorar a teoria que eu estava estudando há algum tempo.</p>
+        <h2>Objetivo</h2>
+        <p>O objetivo do jogo é colocar todas as caixas de cada fase sobre as marcações vermelhas. Para fazer isso, o jogador pode empurrar apenas uma caixa por vez.</p>
+        <h2>Como jogar</h2>
+        <p>Para controlar o personagem, devem ser usadas as setas do teclado. Caso o jogador perceba que fez um movimento fatal, ele deve clicar no ícone abaixo do mapa, pois isso fará como que a fase atual seja reiniciada.</p>
+        <h2>Processo de criação</h2>
+        <p>Somando todo o tempo, foram precisas aproximadamente 20 horas para produzir o jogo. Os problemas que surgiram durante a criação do jogo eram todos relacionados à programação do jogo em si, sendo que a implementação das imagens SVG foi relativamente simples.</p>
+        </main>
+    </div>
+</body>
+</html>
