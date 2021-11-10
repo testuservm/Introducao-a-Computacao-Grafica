@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polígono</title>
+
+    <style>
+        main {
+            margin-left: 50px;
+            display: flex;
+            flex-direction: "row";
+            width: 300px;
+            height: 300px;
+            margin-top: 70px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+    <div id="svgs" style="min-height: 510px; width: 510px;">
+        <svg id="main-svg" width="510" height="510" + viewBox="0 0 510 510" + fill="none" xmlns="http://www.w3.org/2000/svg">
+            <image href="cenario.svg"></image>
+            <g id="polygon"></g>
+            <g id="axis"></g>
+            <g id="points"></g>
+            <g id="pointer"></g>
+        </svg>
+    </div>
+
+    <form>
+        <input type="number" id="npoints" value="5" placeholder="Pontos" min="1">
+        <input type="number" id="speed" value="1" placeholder="Velocidade" min="1">
+        <button type="button" id="reload">Recarregar</button>
+    </form>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
